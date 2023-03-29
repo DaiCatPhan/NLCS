@@ -24,7 +24,7 @@
 <body>
     <!--begin HEADER -->
     <?php
-      include "../apps/resoures/view/partials/header_admin.php";
+      include "../apps/resoures/view/partials/header_admin.php ";
     ?>
     <!--end   HEADER -->
 
