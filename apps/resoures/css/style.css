@@ -1,0 +1,195 @@
+.mr-2{
+    margin-right: 2px;
+}
+
+.height_300{
+    height: 200px;
+}
+
+
+.form_addbook{
+    max-width: 550px;
+    margin: auto;
+}
+
+.ml_100{
+    margin-left: 100px;
+}
+
+.img_book{ 
+    height: 230px;
+}
+
+.img_logo{
+    width: 80px;
+}
+
+.width_235{
+    width: 235px;
+}
+
+.start{
+    width: 20px;
+    margin-bottom: 3px;
+}
+
+.height_440{
+    height: 480px;
+}
+
+.height_570{
+    height: 570px;
+}
+
+.white{
+    color: white;
+}
+
+.img_update_book{
+    width: 285px;
+    height: 438px;
+}
+
+.max_width_315{
+    max-width: 315px;
+}
+
+.ml_20{
+    margin-left: 20px;
+} 
+
+.max_width_758{
+    max-width: 758px;
+}
+
+.min_height_50{
+    min-height: 50px;
+}
+
+.word_wrap{
+    word-wrap: break-word;
+}
+
+.line_height_50{
+    line-height: 50px;
+}
+
+.img_comment{
+    height: 325px; 
+}
+
+.backgound_showboook{
+    height: 250px;
+}
+
+.margin_bottom_290{
+    margin-bottom: 435px;
+}
+
+.button_header{
+    height: 55px;
+    min-width: 90px;
+}
+
+/* Hover vô cho nó to lên  */
+.hover_large{
+    transition: 0.5s;
+    border: none;
+    box-shadow: 2px 2px 2px rgb(185, 182, 182) ;
+}
+  
+.hover_large:hover{
+transform: scale(1.05);
+background-color: #f5f2f2;
+}
+
+/* dòng dài quá thì nó tự xuống dòng  */
+.word_wrap{
+    word-wrap: break-word;
+}
+
+.color_black{
+    color: black;
+}
+
+.img_bg{
+    height: 160px;
+    width: 100%;
+}
+
+
+.width_300{
+    width: 300px;
+}
+
+.min_height{
+    min-height: 340px;
+}
+
+
+
+/* Hover vô cho nó to lên  */
+.hover_large{
+    transition: 0.5s;
+    border: none;
+    box-shadow: 2px 2px 2px 2px rgb(185, 182, 182) ;
+}
+  
+.hover_large:hover{
+    transform: scale(1.05);
+    background-color: #f5f2f2;
+}
+
+.icon_authentication{
+    background-color: wheat;
+}
+
+.bg_f5f2f2{
+    background-color: #f5f2f2;
+}
+
+.img_xemcomment_book{
+    height: 483px;
+    width: 285px;
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
