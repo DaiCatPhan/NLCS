@@ -1,11 +1,11 @@
 <?php
 session_start();
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark  ">
+<nav class="navbar navbar-expand-lg navbar-light  bg-dark navbar-dark  ">
   <div class="container">
 
     <div class="">
-      <a href="../public/index.php"><img class="img_logo" src="https://img.pikbest.com/png-images/book-logo-vector-graphic-element_2433299.png!w700wp" alt=""></a>
+      <a href="../public/index.php"><img class="bg-white" style="width: 200px; height: 50px; margin-right: 5px" src="https://www.ctu.edu.vn/images/upload/logomobile.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,7 +14,7 @@ session_start();
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="">
         <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Kinh tế
+          Xem thông báo
         </button>
       </a>
     </div>
@@ -30,7 +30,7 @@ session_start();
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="">
         <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Đạo
+          Nộp bài tập
         </button>
       </a>
     </div>

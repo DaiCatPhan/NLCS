@@ -48,12 +48,16 @@
                                 <td>{$row['tensach']}</td>
                                 <td>{$row['theloai']}</td>
                                 <td>{$row['actor']}</td>
-                                <td><a class=\"text-decoration-none text-success\" href=\"Edit_book.php?id={$row['id_sach']}\">
-                                    <i class=\"fa-solid fa-pen-to-square fa-beat\" style=\"color: #161dd4;\"></i>
+                                <td>
+                                    <a class=\"text-decoration-none text-success\" href=\"Edit_book.php?id={$row['id_sach']}\">
+                                        <i class=\"fa-solid fa-pen-to-square fa-beat\" style=\"color: #161dd4;\"></i>
+                                    </a>
                                 </td>
-                                <td><a href=\"\" data-id=\"{$row['id_sach']}\" data-bs-toggle=\"modal\" data-bs-target=\"#delete_novel\" class=\"text-decoration-none text-danger\">
-                                    <i class=\"fa-solid fa-trash fa-bounce\" style=\"color: #f40101;\"></i>
-                                </a></td>
+                                <td>
+                                    <a href=\"\" data-id=\"{$row['id_sach']}\" data-bs-toggle=\"modal\" data-bs-target=\"#delete_novel\" class=\"text-decoration-none text-danger\">
+                                        <i class=\"fa-solid fa-trash fa-bounce\" style=\"color: #f40101;\"></i>
+                                    </a>
+                                </td>
                             </tr>
 
                             <div class=\"modal fade\" id=\"delete_novel\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
