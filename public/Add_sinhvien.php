@@ -25,18 +25,16 @@
 
     <body>
         <!-- begin MAIN  -->
-        <div class="container">
+        <div class="container-fuild">
             <section class="" style="background-color: #eee;">
                 <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col-lg-12 col-xl-11">
                             <div class="card text-black" style="border-radius: 25px;">
-                                <div class="card-body p-md-5">
+                                <div class="card-body p-md-5" style="background-color: #def9f8;">
                                     <div class="row justify-content-center">
+                                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 text-center">Thêm Sinh Viên</p>
                                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-                                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 ">Thêm Sinh Viên</p>
-
                                             <form class="mx-1 mx-md-4 " method="POST" action="../apps/resoures/view/sinhvien/Add_sinhvien.php">
                                                 <!-- {{!-- Email  --}} -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
@@ -70,7 +68,7 @@
 
                                                 <!-- Lớp  -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fa-solid fa-school fa-spin fa-xl me-3  mt-3" style="color: #1fffda;"></i>
+                                                    <i class="fa-solid fa-school fa-spin fa-xl me-3 mt-3" style="color: #1fffda;"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="lop"><b>Lớp</b></label>
                                                         <input type="" id="lop" class="form-control" name="lop" required />
@@ -86,21 +84,16 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- error -->
-                                                <div class="d-flex flex-row align-items-center mb-4 ">
+                                                <!-- detai  -->
+                                                <div class="d-flex flex-row align-items-center mb-4">
+                                                    <i class="fa-solid fa-lock fa-spin fa-xl me-3 mt-3" style="color: #e70d0d;"></i>
                                                     <div class="form-outline flex-fill mb-0">
-                                                        <label class="form-label" for="pass">
-                                                            <b class="text-danger mx-5">
-                                                                <?php
-                                                                if (isset($_GET['error'])) {
-                                                                    echo $_GET['error'];
-                                                                }
-                                                                ?>
-                                                            </b>
-                                                        </label>
+                                                        <label class="form-label" for="detai"><b>Đề tài </b></label>
+                                                        <input type="" id="detai" class="form-control" name="detai" required />
                                                     </div>
                                                 </div>
 
+                                                
 
                                                 <div class="d-flex justify-content-center mb-3 mb-lg-4">
                                                     <button type="submit" class="btn btn-primary btn-lg">Thêm sinh viên</button>
@@ -110,7 +103,7 @@
 
                                         </div>
                                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                            <img src="https://anhngubis.com/wp-content/uploads/2021/11/dang-ky-hoc-thu-hoc-kem-tieng-anh-tai-anh-ngu-bis-quang-ngai.jpg" class="img-fluid" alt="">
+                                            <img src="../apps/resoures/css/img/ocean-3605547_960_720.jpg" class="img-fluid" alt="" style="height: 600px;">
                                         </div>
                                     </div>
                                 </div>

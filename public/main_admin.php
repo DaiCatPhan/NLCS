@@ -43,51 +43,54 @@ session_start();
         <div class="row mt-3">
 
             <!-- col-3 -->
-            <div class="col-3 text-center">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Quản lí sinh viên</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">
-                                <a href="main_admin.php" class="text-decoration-none">Trang chủ</a>
-                            </th>
 
-                        </tr>
+            <div class="col-3">
+                <div class="box m-auto" style="width: 90%;">
+                    <div class="tieude bg-warning text-success text-center">
+                        <h3 class="mb-0">Danh mục</h3>
+                    </div>
+                    <div class="noidung">
+                        <table class="table border">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="main_admin.php" class="text-decoration-none">Trang chủ</a>
+                                    </th>
 
-                        <tr>
-                            <th scope="row">
-                                <a href="quanlisinhvien.php" class="text-decoration-none">Sinh viên</a>
-                            </th>
+                                </tr>
 
-                        </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="quanlisinhvien.php" class="text-decoration-none">Sinh viên</a>
+                                    </th>
 
-                        <tr>
-                            <th scope="row">
-                                <a href="" class="text-decoration-none">Thống kê</a>
-                            </th>
+                                </tr>
 
-                        </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="" class="text-decoration-none">Thống kê</a>
+                                    </th>
 
-                        <tr>
-                            <th scope="row">
-                                <a href="" class="text-decoration-none">Điểm danh</a>
-                            </th>
+                                </tr>
 
-                        </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="diemdanh_sinhvien.php" class="text-decoration-none">Điểm danh</a>
+                                    </th>
 
-                        <tr>
-                            <th scope="row">
-                                <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
-                            </th>
+                                </tr>
 
-                        </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
+                                    </th>
 
-                    </tbody>
-                </table>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!-- col-9 -->
