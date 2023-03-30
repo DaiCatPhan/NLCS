@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niên Luận Cơ Sở</title>
+    <title>Thông báo</title>
     <!-- link bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- {{!-- link jquery  --}} -->
@@ -66,6 +66,12 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
+                                        <a href="" class="text-decoration-none">Thống kê</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
                                         <a href="diemdanh_sinhvien.php" class="text-decoration-none">Điểm danh</a>
                                     </th>
                                 </tr>
@@ -82,12 +88,6 @@ session_start();
                                     </th>
                                 </tr>
 
-                                <tr>
-                                    <th scope="row">
-                                        <a href="thongke.php" class="text-decoration-none">Thống kê</a>
-                                    </th>
-                                </tr>
-
                             </tbody>
                         </table>
                     </div>
@@ -95,32 +95,36 @@ session_start();
             </div>
 
             <!-- col-9 -->
-            <div class="col-9 text-center">
-                <table class=" table table-bordered border-warning border-3 m-auto" style="max-width: 700px;">
-                    <thead>
-                        <tr class="bg-success text-white">
-                            <th colspan="2" scope="col">Niện Luận</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Tên trường: </th>
-                            <td>Công Nghệ Thông Tin Và Truyền Thông</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Mã học phần: </th>
-                            <td>CT271</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Tên học phần: </th>
-                            <td>Niên Luận Cơ Sở - CNTT</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Số sinh viên : </th>
-                            <td>10</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-9">
+                <div class="box border" style="width: 97%;">
+                    <div class="tieude border text-center ">
+                        <h3>Thông báo</h3>
+                    </div>
+                    <div class="noidung row">
+                        <form action="../apps/resoures/view/thongbao/Add_thongbao.php" method="POST">
+                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline" style="width: 85%; height: 60px;">
+                            <button class="d-inline btn btn-warning">Dang</button>
+                        </form>
+                    </div>
+
+                    <hr>
+
+                    <?php
+                    $query = "SELECT user.username , comment.noidung FROM user , comment WHERE comment.id_user = user.id_user ";
+                    $sth = $pdo->prepare($query);
+                    $sth->execute([]);
+                    while ($row = $sth->fetch()) {
+                        echo "
+                                <div class=\" row\">
+                                    <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline \" style=\"width: 83%; height: auto;\">
+                                        <span><b>{$row['username']} : </b></span> 
+                                        <div class=\"mt-1\">{$row['noidung']}</div>
+                                    </div>
+                                </div>
+                            ";
+                    }
+                    ?>
+                </div>
             </div>
         </div>
 

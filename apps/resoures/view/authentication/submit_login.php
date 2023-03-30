@@ -23,7 +23,7 @@
             while($row = $sth->fetch()){
                 if($row){
                     $_SESSION['username']= $row['username'];
-                    $_SESSION['id']= $row['id'];
+                    $_SESSION['id_user']= $row['id_user'];
                     
                     if($row['email']=='admin@gmail.com'){  
                         header("Location:http://localhost/NLCS/public/main_admin.php ");

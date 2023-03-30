@@ -21,7 +21,7 @@
                 $_POST['vang'],
                 $id_user
             ]);
-            header("Location: http://localhost/NLCS/public/diemdanh_sinhvien.php");
+            header("Location:".$_SERVER['HTTP_REFERER']."");
         }
     }
 

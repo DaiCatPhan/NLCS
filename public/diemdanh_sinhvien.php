@@ -38,7 +38,7 @@
 
         <div class="row">
             <div class="col-4">
-                <div class="box  mt-3 m-auto" style="width: 95%;">
+                <div class="box  m-auto" style="width: 95%;">
                     <div class="tieude">
                         <h3 class="text-center">Thống kê vắng</h3>
                     </div>
@@ -87,6 +87,9 @@
                                                 <option value="Phan Đài Cát">Phan Đài Cát</option>
                                                 <option value="Chau Makara">Chau Makara</option>
                                                 <option value="Bùi Văn Tiền">Bùi Văn Tiền</option>
+                                                <option value="Bùi Tuấn Kiệt">Bùi Tuấn Kiệt</option>
+                                                <option value="Lại Thế Văn">Lại Thế Văn</option>
+                                                <option value="Ngô Phát Đạt">Ngô Phát Đạt</option>
                                             </select>
                                         </td>
                                     </tr>

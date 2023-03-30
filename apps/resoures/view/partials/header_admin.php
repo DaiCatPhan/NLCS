@@ -11,7 +11,7 @@
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="">
         <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Đề tài
+          Quản lí thông báo
         </button>
       </a>
     </div>
