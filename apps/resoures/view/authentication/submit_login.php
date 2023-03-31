@@ -29,7 +29,7 @@
                         header("Location:http://localhost/NLCS/public/main_admin.php ");
                         return;
                     }else{
-                        header("Location: http://localhost/NLCS/public/index.php");
+                        header("Location: http://localhost/NLCS/public/thongbao_user.php");
                         return;
                     }
                 }

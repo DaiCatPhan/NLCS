@@ -96,16 +96,7 @@ session_start();
 
             <!-- col-9 -->
             <div class="col-9">
-                <div class="">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/301559514_3431448863839286_5788095641827175647_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=zDAKL2kMHMEAX-xCq1i&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfC_aFBaHfAN9HOyXTYP2LYcB-aVxJAElBNJDdDbF9eY7w&oe=642AE7D8" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
 

@@ -97,7 +97,7 @@
                                     <tr>
                                         <th scope="row">Môn </th>
                                         <td scope="col">
-                                            <input name="mssv" type="text" class="w-100 form-control" style="height: 50px;" value="Niên Luận Cơ Sở">
+                                            <p class="w-100 form-control d-flex align-items-center" style="height: 50px;">Niên luận cơ sở</p>
                                         </td>
                                     </tr>
 
