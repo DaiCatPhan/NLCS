@@ -59,7 +59,7 @@ include '../apps/config/connect.php';
 
                                 <tr>
                                     <th scope="row">
-                                        <a href="" class="text-decoration-none">Sinh viên</a>
+                                        <a href="nopbaitap.php" class="text-decoration-none">Nộp bài tập</a>
                                     </th>
                                 </tr>
 
