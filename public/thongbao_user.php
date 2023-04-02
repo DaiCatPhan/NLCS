@@ -90,14 +90,17 @@ include '../apps/config/connect.php';
                     <hr>
 
                     <?php
-                    $query = "SELECT user.username , comment.noidung FROM user , comment WHERE comment.id_user = user.id_user ";
+                    $query = "SELECT user.username , comment.noidung , comment.created_at FROM user , comment WHERE comment.id_user = user.id_user ";
                     $sth = $pdo->prepare($query);
                     $sth->execute([]);
                     while ($row = $sth->fetch()) {
                         echo "
                                 <div class=\" row\">
                                     <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline \" style=\"width: 83%; height: auto;\">
-                                        <span><b>{$row['username']} : </b></span> 
+                                        <div class=\"d-flex justify-content-between\">
+                                            <span><b>{$row['username']} : </b></span> 
+                                            <p>{$row['created_at']}</p>
+                                        </div>
                                         <div class=\"mt-1\">{$row['noidung']}</div>
                                     </div>
                                 </div>

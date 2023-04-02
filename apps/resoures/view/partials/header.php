@@ -22,13 +22,13 @@
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="">
         <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Tư tưởng
+          
         </button>
       </a>
     </div>
 
     <div class="navbar-nav">
-      <a class="nav-link active" aria-current="page" href="">
+      <a class="nav-link active" aria-current="page" href="nopbaitap.php">
         <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
           Nộp bài tập
         </button>

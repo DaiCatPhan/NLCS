@@ -88,7 +88,7 @@ include '../apps/config/connect.php';
                                 <p>100 điểm</p>
                             </div>
                             <div class="right">
-                                <p class="mx-2 my-2"><b>Đến hạn  23:19 1th5</b></p>
+                                <p class="mx-2 my-2"><b>Đến hạn 23:19 1th5</b></p>
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ include '../apps/config/connect.php';
                             <form>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label">
-                                        Nhận xét : 
+                                        Nhận xét :
                                     </label>
                                     <div class="col-sm-10 d-flex">
                                         <input type="password" class="form-control" id="inputPassword" style="width: 90%;">
@@ -138,19 +138,30 @@ include '../apps/config/connect.php';
                     <div class="text m-auto" style="width: 90%;">
                         <div class="d-flex justify-content-around">
                             <h2 class="text-center ">Bài tập của bạn </h2>
-                            <?php
-                                if(isset($_GET['nopfile'])){
-                                    echo "
-                                        <h3 class=\"text-danger\">Đã nộp</h3>
-                                    ";
-                                }
-                            ?>
                         </div>
                         <br>
-                        <form method="POST" enctype="multipart/form-data" action="../apps/resoures/view/upload_file/upload.php"> 
+                        <form method="POST" enctype="multipart/form-data" action="../apps/resoures/view/upload_file/upload.php">
                             <p class="border text-center" style="height: 50px;">
-                                <input type="file" class="" style="margin-top: 7px;" name="fileupload">
+                                <input type="file" class="" style="margin-top: 7px;" name="fileupload" required>
                             </p>
+                            <?php
+                                $query = "SELECT * FROM fileupload WHERE id_user = ?";
+                                $sth = $pdo->prepare($query);
+                                $sth->execute([
+                                    $_SESSION['id_user']
+                                ]);
+                                while ($row = $sth->fetch()) {
+                                    if (isset($row['noidung_file'])) {
+                                        echo "
+                                            <p>
+                                                <a href=\" \">
+                                                    {$row['noidung_file']}
+                                                </a>
+                                            </p>
+                                        ";
+                                    }
+                                }
+                            ?>
                             <button class="btn btn-primary w-100">Đánh dấu là đã hoàn thành</button>
                         </form>
                         <br>

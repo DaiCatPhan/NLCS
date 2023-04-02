@@ -10,7 +10,11 @@
                 $_POST['noidung'],
                 
             ]);
-            header("Location:http://localhost/NLCS/public/thongbao.php");
+            if($_SESSION['username']=='admin'){
+                header("Location:http://localhost/NLCS/public/thongbao.php");
+            }else{
+                header("Location:http://localhost/NLCS/public/thongbao_user.php");
+            }
         }else{
             echo "Nhập dữ liệu !!!";
         }
