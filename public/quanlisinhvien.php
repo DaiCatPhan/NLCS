@@ -1,3 +1,8 @@
+
+<?php
+    include '../apps/config/connect.php'; 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +25,6 @@
 <body>
     <!--begin HEADER -->
     <?php include_once "../apps/resoures/view/partials/header_admin.php"; ?>
-    <?php include '../apps/config/connect.php'; ?>
     <!--end   HEADER -->
 
     <div class=" min_height">

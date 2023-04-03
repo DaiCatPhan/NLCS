@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark  ">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-dark  ">
   <div class="container">
 
     <div class="">
@@ -9,36 +9,38 @@
     </div>
 
     <div class="navbar-nav">
-      <a class="nav-link active" aria-current="page" href="">
-        <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Quản lí thông báo
+      <a class="nav-link active" aria-current="page" href="http://localhost/NLCS/public/thongbao.php">
+        <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 90px;">
+          <span class=""><b>Quản lí thông báo</b></span>
         </button>
       </a>
     </div>
 
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="http://localhost/NLCS/public/quanlisinhvien.php">
-        <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Quản lí Sinh Viên
+        <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 90px;">
+          <span><b>Quản lí sinh viên</b></span>
         </button>
       </a>
     </div>
 
     <div class="navbar-nav">
-      <a class="nav-link active" aria-current="page" href="">
-        <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Quản lí comment
+      <a class="nav-link active" aria-current="page" href="http://localhost/NLCS/public/thongke.php">
+        <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 90px;">
+          <span><b>Thống kê</b></span>
         </button>
       </a>
     </div>
 
-    <ul class="navbar-nav">
-      <button class="btn btn-secondary rounded-pill">
+    <ul class="navbar-nav" style="margin-right: 25px;">
+      <button class="btn btn-light rounded-pill">
         <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php
             if (isset($_SESSION['username'])) {
-              echo $_SESSION['username'];
+              echo "
+                <span class=\"text-success\"><b>{$_SESSION['username']}</b></span>
+              ";
             }
             ?>
           </a>
@@ -51,5 +53,20 @@
       </button>
     </ul>
 
+
   </div>
 </nav>
+
+
+<!-- <div class="navbar-nav">
+      <form method="POST" action="../public/timkiem.php" style="margin-top: 12px;">
+        <div class="input-group mb-3">
+          <input type="text" name="timkiem" class="form-control">
+          <span class="input-group-text">
+            <button>
+              <i class="fa-solid fa-magnifying-glass fa-flip"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div> -->

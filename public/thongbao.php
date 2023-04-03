@@ -110,7 +110,7 @@ session_start();
                     <hr>
 
                     <?php
-                    $query = "SELECT user.username , comment.noidung , comment.created_at FROM user , comment WHERE comment.id_user = user.id_user ";
+                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ";
                     $sth = $pdo->prepare($query);
                     $sth->execute([]);
                     while ($row = $sth->fetch()) {
@@ -122,6 +122,14 @@ session_start();
                                             <p>{$row['created_at']}</p>
                                         </div>
                                         <div class=\"mt-1\">{$row['noidung']}</div>
+                                        <div class=\"d-flex justify-content-end\" style=\"\">
+                                            <a href=\"\" style=\"margin-right: 10px;\">
+                                                <i class=\"fa-solid fa-pen fa-sm\" style=\"color: #09c6ec;\"></i>
+                                            </a>
+                                            <a href=\"\" data-id=\"{$row['id_comment']}\" data-bs-toggle=\"modal\" data-bs-target=\"#delete_comment\">
+                                                <i class=\"fa-solid fa-trash fa-sm\" style=\"color: #df1111;\"></i>
+                                            </a>
+                                         </div>
                                     </div>
                                 </div>
                             ";
@@ -129,9 +137,49 @@ session_start();
                     ?>
                 </div>
             </div>
+
+
+            <!-- form delete -->
+            <div class="modal fade" id="delete_comment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Xóa comment ?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Bạn chắc chắn muốn xóa comment này ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-danger" id="btn-delete-cart">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form name="delete-form" method="POST"></form>
+            <!-- Bootstrap JavaScript Libraries -->
+            <script>
+                var delete_novel = document.getElementById('delete_comment')
+                var id_novel
+                var deleteForm = document.forms['delete-form'];
+                var btnDeleteCart = document.getElementById('btn-delete-cart');
+                delete_novel.addEventListener('show.bs.modal', event => {
+                    // Button that triggered the modal
+                    var button = event.relatedTarget
+                    // Extract info from data-bs-* attributes
+                    id_novel = button.getAttribute('data-id')
+                })
+                btnDeleteCart.onclick = function() {
+                    deleteForm.action = '../apps/resoures/view/thongbao/Delete_thongbao.php?id_comment=' + id_novel;
+                    deleteForm.submit();
+                }
+            </script>
         </div>
 
     </div>
+
+
 
     <!--begin FOOTER  -->
     <?php

@@ -1,7 +1,7 @@
 <?php
   session_start();
 ?>
-<nav class="navbar navbar-expand-lg navbar-light  bg-dark navbar-dark  ">
+<nav class="navbar navbar-expand-lg navbar-light  bg-primary navbar-dark  ">
   <div class="container">
 
     <div class="">
@@ -13,50 +13,32 @@
 
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="">
-        <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Xem thông báo
+        <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 90px;">
+         <span class="text-success"> <b>Xem thông báo</b></span>
         </button>
       </a>
     </div>
 
-    <div class="navbar-nav">
-      <a class="nav-link active" aria-current="page" href="">
-        <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          
-        </button>
-      </a>
-    </div>
 
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="nopbaitap.php">
-        <button class="btn btn-secondary rounded-pill " style="height: 50px; min-width: 90px;">
-          Nộp bài tập
+        <button class="btn btn-light rounded-pill btn-light" style="height: 50px; min-width: 90px;">
+          <span class="text-success"><b>Nộp bài tập</b></span>
         </button>
       </a>
     </div>
 
-    <div class="navbar-nav">
-      <form method="POST" action="../public/timkiem.php" style="margin-top: 12px;">
-        <div class="input-group mb-3">
-          <input type="text" name="timkiem" class="form-control">
-          <span class="input-group-text">
-            <button>
-              <i class="fa-solid fa-magnifying-glass fa-flip"></i>
-            </button>
-          </span>
-        </div>
-      </form>
-    </div>
-
     <ul class="navbar-nav" style="margin-right: 25px;">
-      <button class="btn btn-secondary rounded-pill">
+      <button class="btn btn-light rounded-pill">
       <li class="nav-item dropdown ">
-        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <?php
-          if (isset($_SESSION['username'])) {
-            echo $_SESSION['username'];
-          }
-        ?>
+        <a class="nav-link dropdown-toggle active text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <?php
+            if (isset($_SESSION['username'])) {
+              echo "
+                <span class=\"text-success\"><b>{$_SESSION['username']}</b></span>
+              ";
+            }
+          ?>
         </a>
         <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="">Register</a></li>

@@ -19,23 +19,47 @@
 
 <body>
     <!--begin HEADER -->
-    <?php include_once "../apps/resoures/view/partials/header.php"; ?>
+    <?php include_once "../apps/resoures/view/partials/header_index.php"; ?>
     <?php include '../apps/config/connect.php'; ?>
     <!--end   HEADER -->
 
-    <div class="container min_height">
+    <div class="row min_height">
         <!-- backgournd -->
-        <div class="row mt-2 pos_relative">
-            <div class="col">
-                <img src="https://anhdepfree.com/wp-content/uploads/2022/02/background-bang-hoc-tap_657228.jpg" alt="" class="w-100 position-relative" style="height: 200px;">
-                <h1 class="position-relative text-center text-white" style="bottom: 130px">Niên luận cơ sở</h1>
+        <div class="col-9">
+            <div class=" mt-5 pos_relative m-auto " style="width: 90%;">
+                <div class="col">
+                    <img src="https://anhdepfree.com/wp-content/uploads/2022/02/background-bang-hoc-tap_657228.jpg" alt="" class="w-100 position-relative" style="height: 200px;">
+                    <h1 class="position-relative text-center text-white" style="bottom: 130px">Niên luận cơ sở</h1>
+                </div>
             </div>
         </div>
 
-
-        
-       
-
+        <div class="col-3">
+            <div class="box border mt-5" style="width: 95%;">
+                <div class="tieude text-center bg-warning " style="height: 35px;">
+                    <p><b >Điều hướng</b></p>
+                </div>
+                <div class="noidung">
+                    <ul>
+                        <li>
+                            <a href="" class="text-decoration-none">Trang cá nhân</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none">Welcome to CTU-Niên Luận Cơ Sở</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none">Các khóa học của tôi</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none">Thông tin khóa học</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none">Lớp học</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--begin FOOTER  -->

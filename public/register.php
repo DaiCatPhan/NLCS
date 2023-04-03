@@ -19,7 +19,7 @@
 </head>
 <body>
     <!--begin HEADER -->
-    <?php include_once "../apps/resoures/view/partials/header.php"; ?>    
+    <?php include_once "../apps/resoures/view/partials/header_index.php"; ?>    
     <?php include '../apps/config/connect.php'; ?>
     <!--end   HEADER -->
 
