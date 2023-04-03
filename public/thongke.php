@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thống kê</title>
+    <title>Chấm điểm</title>
     <!-- link bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- {{!-- link jquery  --}} -->
@@ -44,7 +44,7 @@ session_start();
 
             <!-- col-3 -->
 
-            <div class="col-3">
+            <!-- <div class="col-3">
                 <div class="box m-auto" style="width: 90%;">
                     <div class="tieude bg-warning text-success text-center">
                         <h3 class="mb-0">Danh mục</h3>
@@ -72,6 +72,12 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
+                                        <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
                                         <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
                                     </th>
                                 </tr>
@@ -84,7 +90,7 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
-                                        <a href="" class="text-decoration-none">Thống kê</a>
+                                        <a href="thongke.php" class="text-decoration-none">Thống kê</a>
                                     </th>
                                 </tr>
 
@@ -92,11 +98,48 @@ session_start();
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
 
             <!-- col-9 -->
-            <div class="col-9">
-                
+            <div class=" ">
+                <h1 class="text-center text-primary">Thống kê</h1>
+                <div class="box m-auto" style="width: 90%;">
+                    <button class="btn btn-warning" style="width: 105px;"><b>In file</b></button>
+                    <button class="btn btn-success" style="width: 105px;"><b>Xuất PDF</b></button>
+                    <table class="table table-bordered border-primary text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mã số sinh viên</th>
+                                <th scope="col">Họ tên sinh viên</th>
+                                <th scope="col">Lớp</th>
+                                <th scope="col">Mã môn học</th>
+                                <th scope="col">Bài làm</th>
+                                <th scope="col">Điểm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin'";
+                                $sth = $pdo->prepare($query);
+                                $sth->execute([]);
+                                while($row = $sth->fetch()){
+                                    echo "
+                                        <tr>
+                                            <td>{$row['mssv']}</td>
+                                            <td>{$row['username']}</td>
+                                            <td>@{$row['mssv']}</td>
+                                            <td>CT271</td>
+                                            <td>{$row['noidung_file']}</td>
+                                            <td>{$row['diem']}</td>
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 

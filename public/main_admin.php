@@ -40,17 +40,17 @@ session_start();
 
 
         <!-- Hiển thị Lish Sach  -->
-        <div class="row mt-3">
+        <div class="row">
 
             <!-- col-3 -->
 
-            <div class="col-3">
+            <div class="col-3 mt-3 ">
                 <div class="box m-auto" style="width: 90%;">
                     <div class="tieude bg-warning text-success text-center">
                         <h3 class="mb-0">Danh mục</h3>
                     </div>
                     <div class="noidung">
-                        <table class="table border">
+                        <table class="table border border-warning">
                             <tbody>
                                 <tr>
                                     <th scope="row">
@@ -60,7 +60,7 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
-                                        <a href="quanlisinhvien.php" class="text-decoration-none">Sinh viên</a>
+                                        <a href="quanlisinhvien.php" class="text-decoration-none">Quản lí sinh viên</a>
                                     </th>
                                 </tr>
 
@@ -101,8 +101,8 @@ session_start();
             </div>
 
             <!-- col-9 -->
-            <div class="col-9 text-center">
-                <table class=" table table-bordered border-warning border-3 m-auto" style="max-width: 700px;">
+            <div class="col-9 text-center " style="margin-top: 60px;">
+                <table class=" table table-bordered border-success border-3 m-auto" style="width: 80%;">
                     <thead>
                         <tr class="bg-success text-white">
                             <th colspan="2" scope="col">Niện Luận</th>

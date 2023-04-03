@@ -1,7 +1,6 @@
-
 <?php
-    include '../apps/config/connect.php'; 
-    session_start();
+include '../apps/config/connect.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,41 +45,48 @@
                         <h3 class="mb-0">Danh mục</h3>
                     </div>
                     <div class="noidung">
-                        <table class="table border">
+                        <table class="table border border-warning">
                             <tbody>
                                 <tr>
                                     <th scope="row">
                                         <a href="main_admin.php" class="text-decoration-none">Trang chủ</a>
                                     </th>
-
                                 </tr>
 
                                 <tr>
                                     <th scope="row">
-                                        <a href="quanlisinhvien.php" class="text-decoration-none">Sinh viên</a>
+                                        <a href="quanlisinhvien.php" class="text-decoration-none">Quản lí sinh viên</a>
                                     </th>
-
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="" class="text-decoration-none">Thống kê</a>
-                                    </th>
-
                                 </tr>
 
                                 <tr>
                                     <th scope="row">
                                         <a href="diemdanh_sinhvien.php" class="text-decoration-none">Điểm danh</a>
                                     </th>
+                                </tr>
 
+                                <tr>
+                                    <th scope="row">
+                                        <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
+                                    </th>
                                 </tr>
 
                                 <tr>
                                     <th scope="row">
                                         <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
                                     </th>
+                                </tr>
 
+                                <tr>
+                                    <th scope="row">
+                                        <a href="thongbao.php" class="text-decoration-none">Thông báo</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="thongke.php" class="text-decoration-none">Thống kê</a>
+                                    </th>
                                 </tr>
 
                             </tbody>
@@ -157,7 +163,7 @@
     </div>
 
     <!-- Xu li delete -->
-    <form name="delete-form" method="POST"></form>    
+    <form name="delete-form" method="POST"></form>
     <!-- Bootstrap JavaScript Libraries -->
     <script>
         var delete_novel = document.getElementById('delete_novel')
@@ -184,4 +190,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </html>
-

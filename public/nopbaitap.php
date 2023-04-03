@@ -157,8 +157,20 @@ include '../apps/config/connect.php';
                                                 <a href=\" \">
                                                     {$row['noidung_file']}
                                                 </a>
+                                                
                                             </p>
                                         ";
+
+                                        if($row['noidung_file'] != 'NULL'){
+                                            echo "
+                                            <p style=\"color: red;
+                                            top: 310px;
+                                            position: absolute;
+                                            right: 17px;\">
+                                        <b>Đã nộp</b>
+                                        </p>
+                                            ";
+                                        }
                                     }
                                 }
                             ?>

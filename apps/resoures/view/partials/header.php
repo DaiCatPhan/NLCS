@@ -12,7 +12,7 @@
     </div>
 
     <div class="navbar-nav">
-      <a class="nav-link active" aria-current="page" href="">
+      <a class="nav-link active" aria-current="page" href="http://localhost/NLCS/public/thongbao_user.php">
         <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 90px;">
          <span class="text-success"> <b>Xem thông báo</b></span>
         </button>
