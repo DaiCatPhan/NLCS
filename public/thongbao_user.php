@@ -76,18 +76,17 @@ include '../apps/config/connect.php';
 
             <!-- col-9 -->
             <div class="col-9">
-                <div class="box border" style="width: 97%;">
-                    <div class="tieude border text-center ">
+                <div class="box border bg-light" style="width: 97%;">
+                    <div class="tieude border text-center - bg-warning">
                         <h3>Thông báo</h3>
                     </div>
                     <div class="noidung row">
                         <form action="../apps/resoures/view/thongbao/Add_thongbao.php" method="POST">
-                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline" style="width: 85%; height: 60px;">
-                            <button class="d-inline btn btn-warning">Dang</button>
+                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline border border-warning" style="width: 85%; height: 60px;" placeholder="Nhập nội dung thông báo">
+                            <button class="d-inline btn btn-success">Đăng</button>
                         </form>
                     </div>
-
-                    <hr>
+                    <br>
 
                     <?php
                     $query = "SELECT user.username , comment.noidung , comment.created_at FROM user , comment WHERE comment.id_user = user.id_user ";
@@ -96,9 +95,9 @@ include '../apps/config/connect.php';
                     while ($row = $sth->fetch()) {
                         echo "
                                 <div class=\" row\">
-                                    <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline \" style=\"width: 83%; height: auto;\">
+                                    <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline\" style=\"width: 83%; height: auto;\">
                                         <div class=\"d-flex justify-content-between\">
-                                            <span><b>{$row['username']} : </b></span> 
+                                            <span><b>{$row['username']}</b></span> 
                                             <p>{$row['created_at']}</p>
                                         </div>
                                         <div class=\"mt-1\">{$row['noidung']}</div>

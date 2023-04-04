@@ -96,14 +96,14 @@ session_start();
 
             <!-- col-9 -->
             <div class="col-9">
-                <div class="box border" style="width: 97%;">
-                    <div class="tieude border text-center ">
+                <div class="box border bg-light" style="width: 97%;">
+                    <div class="tieude border text-center bg-warning">
                         <h3>Thông báo</h3>
                     </div>
                     <div class="noidung row">
                         <form action="../apps/resoures/view/thongbao/Add_thongbao.php" method="POST">
-                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline" style="width: 85%; height: 60px;">
-                            <button class="d-inline btn btn-warning">Dang</button>
+                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline" style="width: 85%; height: 60px;" placeholder="Nhập nội dung thông báo ...">
+                            <button class="d-inline btn btn-success">Đăng</button>
                         </form>
                     </div>
 

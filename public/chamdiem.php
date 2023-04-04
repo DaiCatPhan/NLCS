@@ -102,6 +102,9 @@ session_start();
 
             <!-- col-9 -->
             <div class=" text-center">
+                <a href="http://localhost/NLCS/public/main_admin.php" class="">
+                    <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 20px; margin-top: 10px;"></i>
+                </a>
                 <div class="box m-auto" style="width: 85%;">
                     <table class="table table-bordered border-primary">
                         <thead>
@@ -116,11 +119,11 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin'";
-                                $sth = $pdo->prepare($query);
-                                $sth->execute([]);
-                                while($row = $sth->fetch()){
-                                    echo "
+                            $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin'";
+                            $sth = $pdo->prepare($query);
+                            $sth->execute([]);
+                            while ($row = $sth->fetch()) {
+                                echo "
                                         <tr>
                                             <td>{$row['mssv']}</td>
                                             <td>{$row['username']}</td>
@@ -135,10 +138,10 @@ session_start();
                                                 </td>
                                             </form>
                                         </tr>
-                                    ";                                
-                                }
+                                    ";
+                            }
                             ?>
-                            
+
                         </tbody>
                     </table>
                 </div>

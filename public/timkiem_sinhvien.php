@@ -42,9 +42,6 @@ session_start();
         <!-- Hiển thị Lish Sach  -->
         <div class="mt-3">
             <div class=" ">
-                <a href="http://localhost/NLCS/public/main_admin.php" class="">
-                    <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 30px; margin-top: 10px;"></i>
-                </a>
                 <h1 class="text-center text-primary">Thống kê</h1>
                 <form action="timkiem_sinhvien.php" method="POST" class="text-center">
                     <input type="text" class="form-control w-25 d-inline border border-warning" name="mssv_timkiem">
@@ -78,21 +75,28 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin'";
-                            $sth = $pdo->prepare($query);
-                            $sth->execute([]);
-                            while ($row = $sth->fetch()) {
-                                echo "
-                                        <tr>
-                                            <td>{$row['mssv']}</td>
-                                            <td>{$row['username']}</td>
-                                            <td>{$row['mssv']}</td>
-                                            <td>{$row['lop']}</td>
-                                            <td>CT271</td>
-                                            <td><a href=\"\" class=\"text-decoration-none\">{$row['noidung_file']}</a></td>
-                                            <td>{$row['diem']}</td>
-                                        </tr>
-                                    ";
+
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (isset($_POST['mssv_timkiem'])) {
+                                    $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin' AND user.mssv=?";
+                                    $sth = $pdo->prepare($query);
+                                    $sth->execute([
+                                        $_POST['mssv_timkiem']
+                                    ]);
+                                    while ($row = $sth->fetch()) {
+                                        echo "
+                                                <tr>
+                                                    <td>{$row['mssv']}</td>
+                                                    <td>{$row['username']}</td>
+                                                    <td>{$row['mssv']}</td>
+                                                    <td>{$row['lop']}</td>
+                                                    <td>CT271</td>
+                                                    <td><a href=\"\" class=\"text-decoration-none\">{$row['noidung_file']}</a></td>
+                                                    <td>{$row['diem']}</td>
+                                                </tr>
+                                            ";
+                                    }
+                                }
                             }
                             ?>
 

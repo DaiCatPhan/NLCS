@@ -34,16 +34,6 @@
             </div>
 
             <div class="row">
-                <div class="col-3">
-                    <div class="box mt-3 m-auto" style="width: 90%;">
-                        <div class="tieude bg-warning text-success text-center">
-                            <h3 class="mb-0">Danh mục</h3>
-                        </div>
-                        <div class="noidung">
-
-                        </div>
-                    </div>
-                </div>
 
                 <!-- PHP -->
                 <?php
@@ -55,7 +45,7 @@
                     $row = $sth->fetch();
                 ?>
 
-                <div class="col-9 m-auto">
+                <div class=" m-auto" style="width: 80%;">
                     <form action="../apps/resoures/view/sinhvien/Edit_sinhvien.php?id_user=<?php echo $row['id_user'];?>" method="POST">
                         <div class="box mt-3" style="width: 98%;">
                             <div class="tieude bg-warning text-success text-center">

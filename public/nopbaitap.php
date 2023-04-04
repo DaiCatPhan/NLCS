@@ -41,38 +41,6 @@ include '../apps/config/connect.php';
         <!-- Hiển thị Lish Sach  -->
         <div class="row mt-3">
 
-            <!-- col-3 -->
-            <!-- <div class="col-3">
-                <div class="box m-auto" style="width: 90%;">
-                    <div class="tieude bg-warning text-success text-center">
-                        <h3 class="mb-0">Danh mục</h3>
-                    </div>
-                    <div class="noidung">
-                        <table class="table border">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        <a href="" class="text-decoration-none">Trang chủ</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="" class="text-decoration-none">Sinh viên</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="" class="text-decoration-none">Thống kê</a>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> -->
-
             <!-- col-9 -->
             <div class="col-8">
                 <!-- Gioi thieu -->
@@ -89,6 +57,22 @@ include '../apps/config/connect.php';
                             </div>
                             <div class="right">
                                 <p class="mx-2 my-2"><b>Đến hạn 23:19 1th5</b></p>
+                                <br>
+                                <br>
+                                <p>
+                                    
+                                    <?php
+                                        $query ="SELECT diem FROM diem WHERE id_user = ?";
+                                        $sth = $pdo->prepare($query);
+                                        $sth ->execute([
+                                            $_SESSION['id_user']
+                                        ]);
+                                        $row = $sth->fetch();
+                                        echo "
+                                            <button class=\"btn btn-secondary\">Điểm : {$row['diem']}/100</button>
+                                        ";
+                                    ?>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -178,6 +162,10 @@ include '../apps/config/connect.php';
                         </form>
                         <br>
                     </div>
+                </div>
+
+                <div class="box border" style="width: 97%; box-shadow: 1px 1px 1px 2px #AAA;">
+
                 </div>
             </div>
         </div>
