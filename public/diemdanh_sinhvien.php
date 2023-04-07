@@ -50,7 +50,7 @@
                             </tr>
                             
                             <?php
-                            $query = "SELECT username , vang FROM diem , user WHERE user.id_user = diem.id_user ";
+                            $query = "SELECT username , vang FROM diemdanh , user WHERE user.id_user = diemdanh.id_user ";
                             $sth = $pdo->prepare($query);
                             $sth->execute([]);
                             while ($row = $sth->fetch()) {

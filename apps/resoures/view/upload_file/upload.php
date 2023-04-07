@@ -19,31 +19,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $target_file = $target_dir . basename($_FILES["fileupload"]["name"]);
     $filename = $_FILES["fileupload"]["name"];
 
-    echo $_SESSION['id_user'];
-    echo $filename;
-
     move_uploaded_file($_FILES["fileupload"]["tmp_name"], $target_file);
 
-
+    if (isset($_SESSION['id_user'])) {
+        $query = "SELECT * FROM fileupload WHERE id_user = {$_SESSION['id_user']} ";
+        $sth = $pdo->prepare($query);
+        $sth->execute([]);
+        $row = $sth->fetch();
+        if ($row) {
+            if (!empty($filename) && !empty($_SESSION['id_user'])) {
+                $query2 = 'UPDATE fileupload SET noidung_file =? WHERE id_user = ?';
+                $sth2 = $pdo->prepare($query2);
+                $sth2->execute([
+                    $filename,
+                    $_SESSION['id_user']
+                ]);
+                header("Location: http://localhost/NLCS/public/nopbaitap.php");
+            }
+        } else {
+            if (!empty($filename) && !empty($_SESSION['id_user'])) {
+                $query1 = 'INSERT INTO fileupload (id_user , noidung_file ) VALUES (?,?)';
+                $sth1 = $pdo->prepare($query1);
+                $sth1->execute([
+                    $_SESSION['id_user'],
+                    $filename
+                ]);
+                header("Location: http://localhost/NLCS/public/nopbaitap.php");
+            }
+        }
+    }
 
     // if(!empty($filename) && !empty($_SESSION['id_user']) ){
-    //     $query = 'INSERT INTO fileupload (id_user , noidung_file ) VALUES (?,?)' ;
-    //     $sth = $pdo->prepare($query);
-    //     $sth->execute([
+    //     $query1 = 'INSERT INTO fileupload (id_user , noidung_file ) VALUES (?,?)' ;
+    //     $sth1 = $pdo->prepare($query1);
+    //     $sth1->execute([
     //         $_SESSION['id_user'],
     //         $filename
     //     ]);
     //     header("Location: http://localhost/NLCS/public/nopbaitap.php");
     // }
 
-    if(!empty($filename) && !empty($_SESSION['id_user']) ){
-        $query = 'UPDATE fileupload SET noidung_file =? WHERE id_user = ?' ;
-        $sth = $pdo->prepare($query);
-        $sth->execute([
-            $filename,
-            $_SESSION['id_user']
-        ]);
-        header("Location: http://localhost/NLCS/public/nopbaitap.php");
-    }
+    // if(!empty($filename) && !empty($_SESSION['id_user']) ){
+    //     $query2 = 'UPDATE fileupload SET noidung_file =? WHERE id_user = ?' ;
+    //     $sth2 = $pdo->prepare($query2);
+    //     $sth2->execute([
+    //         $filename,
+    //         $_SESSION['id_user']
+    //     ]);
+    //     header("Location: http://localhost/NLCS/public/nopbaitap.php");
+    // }
 }
 ?>
