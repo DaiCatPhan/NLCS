@@ -78,7 +78,9 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin'";
+                            $query =   "SELECT * FROM user , diem , fileupload  
+                                        WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user 
+                                        AND NOT user.username = 'admin'";
                             $sth = $pdo->prepare($query);
                             $sth->execute([]);
                             while ($row = $sth->fetch()) {

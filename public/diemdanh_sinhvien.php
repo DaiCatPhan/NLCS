@@ -49,8 +49,12 @@
                                 <th>Vắng</th>
                             </tr>
                             
+                            <!--  Hiển thị tên sinh viên và số buổi vắng -->
                             <?php
-                            $query = "SELECT username , vang FROM diemdanh , user WHERE user.id_user = diemdanh.id_user ";
+                            $query = "  SELECT username , vang 
+                                        FROM diemdanh , user 
+                                        WHERE user.id_user = diemdanh.id_user 
+                                    ";
                             $sth = $pdo->prepare($query);
                             $sth->execute([]);
                             while ($row = $sth->fetch()) {
@@ -68,6 +72,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Tạo form lấy dữ liệu id_user và số ngày vắng để xử lí php bên trang điemanh_sinhviên.php -->
             <div class="col-8 m-auto">
                 <form action="../apps/resoures/view/sinhvien/Diemdanh_sinhvien.php" method="POST">
                     <div class="box mt-3" style="width: 98%;">
@@ -94,7 +100,7 @@
                                                     ])  ;
                                                     while($row = $sth->fetch()){
                                                         echo "
-                                                        <option val\"{$row['username']}\">{$row['username']}</option>
+                                                        <option value\"{$row['username']}\">{$row['username']}</option>
                             
                                                         ";
                                                     }
@@ -113,13 +119,13 @@
                                     <tr>
                                         <th scope="row">Số buổi vắng </th>
                                         <td scope="col">
-                                            <input name="vang" type="text" class="w-100 form-control" style="height: 50px; " required>
+                                            <input name="vang" type="number" class="w-100 form-control" style="height: 50px; " required>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <th colspan="2" class="text-center">
-                                            <button class="btn btn-success">Hoàn tất thông tin</button>
+                                            <button type="submit" class="btn btn-success">Hoàn tất thông tin</button>
                                         </th>
                                     </tr>
                                 </tbody>

@@ -38,114 +38,76 @@ session_start();
             </div>
         </div>
 
+        <!-- <a href="http://localhost/NLCS/public/main_admin.php" class="">
+            <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 20px; margin-top: 20px;"></i>
+        </a> -->
 
         <!-- Hiển thị Lish Sach  -->
         <div class="row mt-3">
+            
 
-            <!-- col-3 -->
 
-            <!-- <div class="col-3">
-                <div class="box m-auto" style="width: 90%;">
-                    <div class="tieude bg-warning text-success text-center">
-                        <h3 class="mb-0">Danh mục</h3>
-                    </div>
-                    <div class="noidung">
-                        <table class="table border">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        <a href="main_admin.php" class="text-decoration-none">Trang chủ</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="quanlisinhvien.php" class="text-decoration-none">Sinh viên</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="diemdanh_sinhvien.php" class="text-decoration-none">Điểm danh</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="thongbao.php" class="text-decoration-none">Thông báo</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="thongke.php" class="text-decoration-none">Thống kê</a>
-                                    </th>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- col-9 -->
-            <div class=" text-center">
-                <a href="http://localhost/NLCS/public/main_admin.php" class="">
-                    <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 20px; margin-top: 10px;"></i>
-                </a>
-                <div class="box m-auto" style="width: 85%;">
-                    <table class="table table-bordered border-primary">
-                        <thead>
-                            <tr>
-                                <th scope="col">Mã số sinh viên</th>
-                                <th scope="col">Họ tên sinh viên</th>
-                                <th scope="col">Lớp</th>
-                                <th scope="col">Bài làm</th>
-                                <th scope="col" style="width: 150px;">Điểm</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $query = "SELECT * FROM user , diem , fileupload  WHERE user.id_user=diem.id_user AND user.id_user = fileupload.id_user AND NOT user.username = 'admin'";
-                            $sth = $pdo->prepare($query);
-                            $sth->execute([]);
-                            while ($row = $sth->fetch()) {
+            <div class=" box ">
+                <table class="table table-bordered border-primary m-auto mb-5 text-center" style="width: 80%;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Mã số sinh viên</th>
+                            <th scope="col">Họ tên sinh viên</th>
+                            <th scope="col">Lớp</th>
+                            <th scope="col">Bài làm</th>
+                            <th scope="col" style="width: 150px;">Điểm</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $query = "   SELECT * FROM user 
+                                    INNER JOIN fileupload
+                                    on user.id_user = fileupload.id_user
+                                    INNER JOIN diem
+                                    on user.id_user = diem.id_user
+                                    WHERE NOT user.username = 'admin' ";
+                        $sth = $pdo->prepare($query);
+                        $sth->execute([]);
+                        while ($row = $sth->fetch()) {
+                            echo "
+                                    <tr>
+                                        <td>{$row['mssv']}</td>
+                                        <td>{$row['username']}</td>
+                                        <td>{$row['lop']}</td>
+                                        ";
+                            // khuc giua            
+                            if (!empty($row['noidung_file'])) {
                                 echo "
-                                        <tr>
-                                            <td>{$row['mssv']}</td>
-                                            <td>{$row['username']}</td>
-                                            <td>{$row['lop']}</td>
-                                            <td><a href=\"\" class=\"text-decoration-none\">{$row['noidung_file']}</a></td>
-                                            
-                                            <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
-                                                <td>
-                                                    <input name=\"diemso\" type=\"text\" class=\"form-control\" value=\"{$row['diem']}\">
-                                                </td>
-                                                <td>
-                                                    <button class=\"btn btn-warning\">Chấm điểm</button>
-                                                </td>
-                                            </form>
-                                        </tr>
+                                        <td><a href=\"\" class=\"text-decoration-none\">{$row['noidung_file']}</a></td>
+                                    ";
+                            } else {
+                                echo "
+                                        <td>
+                                            <a href=\"\" class=\"text-decoration-none\">Chưa nộp</a>
+                                        </td>
                                     ";
                             }
-                            ?>
+                            // khuc duoi
+                            echo "
+                                        <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
+                                            <td>
+                                                <input name=\"diemso\" type=\"text\" class=\"form-control\" value=\"{$row['diem']}\" required placeholder=\"\">
+                                            </td>
+                                            <td>
+                                                <button class=\"btn btn-warning\">Chấm điểm</button>
+                                            </td>
+                                        </form>
+                                    </tr>
+                            ";
 
-                        </tbody>
-                    </table>
-                </div>
+                            
+
+                        }
+                        ?>
+
+                    </tbody>
+                </table>
             </div>
         </div>
 

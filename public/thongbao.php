@@ -110,7 +110,7 @@ session_start();
                     <hr>
 
                     <?php
-                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ";
+                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ORDER BY created_at DESC ";
                     $sth = $pdo->prepare($query);
                     $sth->execute([]);
                     while ($row = $sth->fetch()) {

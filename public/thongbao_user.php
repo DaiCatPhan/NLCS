@@ -89,7 +89,7 @@ include '../apps/config/connect.php';
                     <br>
 
                     <?php
-                    $query = "SELECT user.username , comment.noidung , comment.created_at FROM user , comment WHERE comment.id_user = user.id_user ";
+                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ORDER BY created_at DESC ";
                     $sth = $pdo->prepare($query);
                     $sth->execute([]);
                     while ($row = $sth->fetch()) {
