@@ -61,6 +61,8 @@
                                         </tr>
                                     ";
                             }
+
+                            
                             ?>
                         </table>
                     </div>
@@ -83,13 +85,20 @@
                                         <th class="w-25" scope="col">Tên sinh viên </th>
                                         <td scope="col">
                                             <select name="username" id="username" class="w-100" style="height: 50px;" required>
-                                                <option value=""></option>
-                                                <option value="Phan Đài Cát">Phan Đài Cát</option>
-                                                <option value="Chau Makara">Chau Makara</option>
-                                                <option value="Bùi Văn Tiền">Bùi Văn Tiền</option>
-                                                <option value="Bùi Tuấn Kiệt">Bùi Tuấn Kiệt</option>
-                                                <option value="Lại Thế Văn">Lại Thế Văn</option>
-                                                <option value="Ngô Phát Đạt">Ngô Phát Đạt</option>
+                                                <option value="">Chọn tên sinh viên</option>
+                                                <?php
+                                                    $query = "SELECT * FROM user WHERE NOT username = 'admin'";
+                                                    $sth = $pdo ->prepare($query);
+                                                    $sth ->execute([
+
+                                                    ])  ;
+                                                    while($row = $sth->fetch()){
+                                                        echo "
+                                                        <option val\"{$row['username']}\">{$row['username']}</option>
+                            
+                                                        ";
+                                                    }
+                                                ?>
                                             </select>
                                         </td>
                                     </tr>

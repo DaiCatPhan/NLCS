@@ -60,17 +60,21 @@ include '../apps/config/connect.php';
                                 <br>
                                 <br>
                                 <p>
-                                    
+
                                     <?php
-                                        $query ="SELECT diem FROM diem WHERE id_user = ?";
+                                    if (isset($_SESSION['id_user'])) {
+                                        $query = "SELECT diem FROM diem WHERE id_user = ?";
                                         $sth = $pdo->prepare($query);
-                                        $sth ->execute([
+                                        $sth->execute([
                                             $_SESSION['id_user']
                                         ]);
                                         $row = $sth->fetch();
-                                        echo "
+                                        if ($row) {
+                                            echo "
                                             <button class=\"btn btn-secondary\">Điểm : {$row['diem']}/100</button>
-                                        ";
+                                            ";
+                                        }
+                                    }
                                     ?>
                                 </p>
                             </div>
@@ -129,14 +133,14 @@ include '../apps/config/connect.php';
                                 <input type="file" class="" style="margin-top: 7px;" name="fileupload" required>
                             </p>
                             <?php
-                                $query = "SELECT * FROM fileupload WHERE id_user = ?";
-                                $sth = $pdo->prepare($query);
-                                $sth->execute([
-                                    $_SESSION['id_user']
-                                ]);
-                                while ($row = $sth->fetch()) {
-                                    if (isset($row['noidung_file'])) {
-                                        echo "
+                            $query = "SELECT * FROM fileupload WHERE id_user = ?";
+                            $sth = $pdo->prepare($query);
+                            $sth->execute([
+                                $_SESSION['id_user']
+                            ]);
+                            while ($row = $sth->fetch()) {
+                                if (isset($row['noidung_file'])) {
+                                    echo "
                                             <p>
                                                 <a href=\" \">
                                                     {$row['noidung_file']}
@@ -145,8 +149,8 @@ include '../apps/config/connect.php';
                                             </p>
                                         ";
 
-                                        if($row['noidung_file'] != 'NULL'){
-                                            echo "
+                                    if ($row['noidung_file'] != 'NULL') {
+                                        echo "
                                             <p style=\"color: red;
                                             top: 310px;
                                             position: absolute;
@@ -154,9 +158,9 @@ include '../apps/config/connect.php';
                                         <b>Đã nộp</b>
                                         </p>
                                             ";
-                                        }
                                     }
                                 }
+                            }
                             ?>
                             <button class="btn btn-primary w-100">Đánh dấu là đã hoàn thành</button>
                         </form>

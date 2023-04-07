@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     move_uploaded_file($_FILES["fileupload"]["tmp_name"], $target_file);
 
+
+
     // if(!empty($filename) && !empty($_SESSION['id_user']) ){
     //     $query = 'INSERT INTO fileupload (id_user , noidung_file ) VALUES (?,?)' ;
     //     $sth = $pdo->prepare($query);

@@ -12,10 +12,11 @@
                 $_POST['pass'],
                 $_POST['detai']
             ]);
+
+
             header("Location:http://localhost/NLCS/public/quanlisinhvien.php");
         }else{
             echo "Nhập dữ liệu !!!";
         }
-
     }
 ?>

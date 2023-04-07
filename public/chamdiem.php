@@ -129,6 +129,7 @@ session_start();
                                             <td>{$row['username']}</td>
                                             <td>{$row['lop']}</td>
                                             <td><a href=\"\" class=\"text-decoration-none\">{$row['noidung_file']}</a></td>
+                                            
                                             <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
                                                 <td>
                                                     <input name=\"diemso\" type=\"text\" class=\"form-control\" value=\"{$row['diem']}\">
