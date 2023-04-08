@@ -139,7 +139,7 @@ include '../apps/config/connect.php';
                                 $_SESSION['id_user']
                             ]);
                             while ($row = $sth->fetch()) {
-                                if (isset($row['noidung_file'])) {
+                                if (!empty($row['noidung_file'])) {
                                     echo "
                                             <p>
                                                 <a href=\" \">
@@ -149,7 +149,7 @@ include '../apps/config/connect.php';
                                             </p>
                                         ";
 
-                                    if ($row['noidung_file'] != 'NULL') {
+                                  
                                         echo "
                                             <p style=\"color: red;
                                             top: 310px;
@@ -158,7 +158,7 @@ include '../apps/config/connect.php';
                                         <b>Đã nộp</b>
                                         </p>
                                             ";
-                                    }
+                                    
                                 }
                             }
                             ?>

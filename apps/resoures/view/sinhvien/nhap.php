@@ -33,6 +33,13 @@ if ($_SESSION['username_addbook']) {
     $sth2->execute([
         $id_user_addbook
     ]);
+
+    // Khoi tao bang điểm danh
+    $query3 = 'INSERT INTO diemdanh (id_user ) VALUES (?)';
+    $sth3 = $pdo->prepare($query3);
+    $sth3->execute([
+        $id_user_addbook
+    ]);
     header("Location:http://localhost/NLCS/public/quanlisinhvien.php");
 }
 
