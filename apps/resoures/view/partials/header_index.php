@@ -26,9 +26,9 @@ session_start();
             ?>
           </a>
           <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="register.php">Register</a></li>
-            <li><a class="dropdown-item" href="login.php">Sing in</a></li>
-            <li><a class="dropdown-item" href="../apps/resoures/view/authentication/submit_logout.php">Log out</a></li>
+            <li><a class="dropdown-item" href="register.php"><b>Register</b></a></li>
+            <li><a class="dropdown-item" href="login.php"><b>Sing in</b></a></li>
+            <!-- <li><a class="dropdown-item" href="../apps/resoures/view/authentication/submit_logout.php">Log out</a></li> -->
           </ul>
         </li>
       </button>

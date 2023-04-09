@@ -60,19 +60,19 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
-                                        <a href="quanlisinhvien.php" class="text-decoration-none">Sinh viên</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="" class="text-decoration-none">Thống kê</a>
+                                        <a href="quanlisinhvien.php" class="text-decoration-none">Quản lí sinh viên</a>
                                     </th>
                                 </tr>
 
                                 <tr>
                                     <th scope="row">
                                         <a href="diemdanh_sinhvien.php" class="text-decoration-none">Điểm danh</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
                                     </th>
                                 </tr>
 
@@ -85,6 +85,18 @@ session_start();
                                 <tr>
                                     <th scope="row">
                                         <a href="thongbao.php" class="text-decoration-none">Thông báo</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="tongket.php" class="text-decoration-none">Tổng kết</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="thongke.php" class="text-decoration-none">Thống kê</a>
                                     </th>
                                 </tr>
 

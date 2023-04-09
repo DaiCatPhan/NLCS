@@ -90,6 +90,12 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
+                                        <a href="tongket.php" class="text-decoration-none">Tổng kết</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
                                         <a href="thongke.php" class="text-decoration-none">Thống kê</a>
                                     </th>
                                 </tr>

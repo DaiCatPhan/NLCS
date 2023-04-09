@@ -43,8 +43,9 @@
                         <h3 class="text-center">Thống kê vắng</h3>
                     </div>
                     <div class="noidung">
-                        <table class="table table-bordered">
-                            <tr>
+                        <table class="table table-bordered border-success text-center">
+                            <tr class="" style="">
+                                <th>STT</th>
                                 <th>Họ và tên </th>
                                 <th>Vắng</th>
                             </tr>
@@ -57,9 +58,12 @@
                                     ";
                             $sth = $pdo->prepare($query);
                             $sth->execute([]);
+                            $i=0;
                             while ($row = $sth->fetch()) {
+                                $i++;
                                 echo "
-                                        <tr>
+                                        <tr style=\"\">
+                                            <td style=\"width:20px;\">$i</td>
                                             <td>{$row['username']}</td>
                                             <td>{$row['vang']}</td>
                                         </tr>
@@ -76,21 +80,21 @@
             <!-- Tạo form lấy dữ liệu id_user và số ngày vắng để xử lí php bên trang điemanh_sinhviên.php -->
             <div class="col-8 m-auto">
                 <form action="../apps/resoures/view/sinhvien/Diemdanh_sinhvien.php" method="POST">
-                    <div class="box mt-3" style="width: 98%;">
+                    <div class="box " style="width: 98%;">
 
                         <div class="noidung">
-                            <table class="table table-bordered border-warning table-light">
+                            <table class="table table-bordered border-warning ">
                                 <tbody>
                                     <tr>
                                         <td colspan="2">
-                                            <h3 class="mb-0">Thêm mới thông tin điểm danh</h3>
+                                            <h3 class="mb-0 text-center">Thêm mới thông tin điểm danh</h3>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <th class="w-25" scope="col">Tên sinh viên </th>
                                         <td scope="col">
-                                            <select name="username" id="username" class="w-100" style="height: 50px;" required>
+                                            <select name="username" id="username" class="w-100 border border-success" style="height: 50px;" required>
                                                 <option value="">Chọn tên sinh viên</option>
                                                 <?php
                                                     $query = "SELECT * FROM user WHERE NOT username = 'admin'";
@@ -112,14 +116,14 @@
                                     <tr>
                                         <th scope="row">Môn </th>
                                         <td scope="col">
-                                            <p class="w-100 form-control d-flex align-items-center" style="height: 50px;">Niên luận cơ sở</p>
+                                            <p class="w-100 form-control d-flex align-items-center border border-success" style="height: 50px;">Niên luận cơ sở</p>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <th scope="row">Số buổi vắng </th>
                                         <td scope="col">
-                                            <input name="vang" type="number" class="w-100 form-control" style="height: 50px; " required>
+                                            <input name="vang" type="number" class="w-100 form-control border border-success" style="height: 50px; " required>
                                         </td>
                                     </tr>
 

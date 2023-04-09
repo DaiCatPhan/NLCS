@@ -26,6 +26,9 @@
     <body>
         <!-- begin MAIN  -->
         <div class="container-fuild">
+            <a href="http://localhost/NLCS/public/main_admin.php" class="">
+                <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 70px; margin-top: 30px;"></i>
+            </a>
             <section class="" style="background-color: #eee;">
                 <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -42,9 +45,9 @@
                                                         <label class="mx-5 text-danger" for="">
                                                             <b>
                                                                 <?php
-                                                                    if(isset($_GET['err'])){
-                                                                        echo "Tài khoản đã được tạo !!! ";
-                                                                    }
+                                                                if (isset($_GET['err'])) {
+                                                                    echo "Tài khoản đã được tạo !!! ";
+                                                                }
                                                                 ?>
                                                             </b>
                                                         </label>
@@ -53,7 +56,7 @@
                                                 <!-- {{!-- Email  --}} -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw mb-4"></i> -->
-                                                    <i class="fa-solid fa-envelope fa-beat fa-xl  me-3  mt-3" style="color: #2def06;"></i>
+                                                    <i class="fa-solid fa-envelope  fa-xl  me-3  mt-3" style="color: #2def06;"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="email"><b>Your Email : </b></label>
                                                         <input type="email" id="email" class="form-control" name="email" required />
@@ -107,7 +110,7 @@
                                                     </div>
                                                 </div>
 
-                                                
+
 
                                                 <div class="d-flex justify-content-center mb-3 mb-lg-4">
                                                     <button type="submit" class="btn btn-primary btn-lg">Thêm sinh viên</button>

@@ -85,6 +85,12 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
+                                        <a href="tongket.php" class="text-decoration-none">Tổng kết</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
                                         <a href="thongke.php" class="text-decoration-none">Thống kê</a>
                                     </th>
                                 </tr>
@@ -96,14 +102,13 @@ session_start();
             </div>
             <!-- col-9 -->
             <div class="col-9 text-center">
-                <table class="table table-bordered  border-3" style="width: 98%;">
+                <table class="table table-bordered border-secondary  border-3" style="width: 98%;">
                     <thead>
-                        <tr>
-                            <th scope="col">STT</th>
+                        <tr style="background-color: #b7bce3;">
+                            <th>STT</th>
                             <th scope="col">Mã sinh viên</th>
                             <th scope="col">Tên sinh viên</th>
                             <th scope="col">Lớp</th>
-                            <th scope="col">Khoa</th>
                             <th scope="col">Đề tài </th>
                             <th colspan="2">Thao tác</th>
                         </tr>
@@ -113,14 +118,15 @@ session_start();
                         $query = "SELECT * FROM user WHERE NOT email = 'admin@gmail.com'";
                         $sth = $pdo->prepare($query);
                         $sth->execute([]);
+                        $i=0;
                         while ($row = $sth->fetch()) {
+                            $i++;
                             echo "
                                     <tr>
-                                        <th scope=\"row\">{$row['id_user']}</th>
+                                        <td>$i</td>
                                         <td>{$row['mssv']}</td>
                                         <td>{$row['username']}</td>
                                         <td>{$row['lop']}</td>
-                                        <td>CNTT</td>
                                         <td>{$row['detai']}</td>
 
                                         <td>
