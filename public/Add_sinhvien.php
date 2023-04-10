@@ -57,7 +57,7 @@
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw mb-4"></i> -->
                                                     <i class="fa-solid fa-envelope  fa-xl  me-3  mt-3" style="color: #2def06;"></i>
-                                                    <div class="form-outline flex-fill mb-0">
+                                                    <div class="form-outline flex-fill">
                                                         <label class="form-label" for="email"><b>Your Email : </b></label>
                                                         <input type="email" id="email" class="form-control" name="email" required />
                                                     </div>
@@ -65,8 +65,8 @@
 
                                                 <!-- username  -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fa-solid fa-user fa-flip fa-xl me-3  mt-3" style="color: #0858e2;"></i>
-                                                    <div class="form-outline flex-fill mb-0">
+                                                    <i class="fa-solid fa-user fa-xl me-3  mt-3" style="color: #0858e2;"></i>
+                                                    <div class="form-outline flex-fill ">
                                                         <label class="form-label" for="username"><b>User name</b> </label>
                                                         <input type="" id="username" class="form-control" name="username" required />
                                                     </div>
@@ -77,7 +77,7 @@
                                                 <!-- MSSV  -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fa-solid fa-face-smile fa-xl me-3  mt-3" style="color: #ffea00;"></i>
-                                                    <div class="form-outline flex-fill mb-0">
+                                                    <div class="form-outline flex-fill">
                                                         <label class="form-label" for="mssv"><b>MSSV</b></label>
                                                         <input type="" id="mssv" class="form-control" name="mssv" required />
                                                     </div>
@@ -85,8 +85,8 @@
 
                                                 <!-- Lớp  -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fa-solid fa-school fa-spin fa-xl me-3 mt-3" style="color: #1fffda;"></i>
-                                                    <div class="form-outline flex-fill mb-0">
+                                                    <i class="fa-solid fa-school fa-xl me-2 mt-3" style="color: #1fffda;"></i>
+                                                    <div class="form-outline flex-fill">
                                                         <label class="form-label" for="lop"><b>Lớp</b></label>
                                                         <input type="" id="lop" class="form-control" name="lop" required />
                                                     </div>
@@ -94,8 +94,8 @@
 
                                                 <!-- Password  -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fa-solid fa-lock fa-spin fa-xl me-3 mt-3" style="color: #e70d0d;"></i>
-                                                    <div class="form-outline flex-fill mb-0">
+                                                    <i class="fa-solid fa-lock  fa-xl me-3 mt-3" style="color: #e70d0d;"></i>
+                                                    <div class="form-outline flex-fill ">
                                                         <label class="form-label" for="pass"><b>password</b></label>
                                                         <input type="" id="pass" class="form-control" name="pass" required />
                                                     </div>
@@ -103,7 +103,7 @@
 
                                                 <!-- detai  -->
                                                 <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fa-solid fa-lock fa-spin fa-xl me-3 mt-3" style="color: #e70d0d;"></i>
+                                                    <i class="fa-solid fa-pen-to-square fa-xl me-3 mt-3" style="color: #00ff62;"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="detai"><b>Đề tài </b></label>
                                                         <input type="" id="detai" class="form-control" name="detai" required />

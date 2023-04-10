@@ -70,7 +70,7 @@ session_start();
         $sinhvien_rot =  $soluong_sinhvien - $sinhvien_dau;
 
         $tile_sinhvien_dau = ($sinhvien_dau / $soluong_sinhvien) * 100;
-        $tile_sinhvien_rot = 100 - $tile_sinhvien_dau;
+        $tile_sinhvien_rot = 100 - (int)$tile_sinhvien_dau;
         ?>
 
 
@@ -90,7 +90,7 @@ session_start();
                 <div class="mt-5" style="width: 90%; height: 420px;">
                     <canvas id="myChart1"></canvas>
                     <div class="d-flex mx-3">
-                        <span class="text-success"><b>Đậu: <?php echo $tile_sinhvien_dau ?>%</b></span>
+                        <span class="text-success"><b>Đậu: <?php echo (int)$tile_sinhvien_dau ?>%</b></span>
                         <span class="text-danger mx-3"><b>Rớt : <?php echo $tile_sinhvien_rot ?>%</b></span>
                     </div>
                     <p class="text-center mt-3"><b>Biểu đồ 2 : Thể hiện tỉ lệ đậu và rớt môn của các sinh viên</b></p>
