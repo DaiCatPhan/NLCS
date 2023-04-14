@@ -44,14 +44,17 @@ session_start();
 
         <!-- Hiển thị Lish Sach  -->
         <div class="row mt-3">
-            
+
 
 
             <div class=" box ">
                 <table class="table table-bordered border-primary m-auto mb-5 text-center" style="width: 80%;">
                     <thead>
                         <tr>
-                            <th scope="col">Mã số sinh viên</th>
+                            <th scope="col">
+
+                                Mã số sinh viên
+                            </th>
                             <th scope="col">Họ tên sinh viên</th>
                             <th scope="col">Lớp</th>
                             <th scope="col">Bài làm</th>
@@ -70,9 +73,16 @@ session_start();
                         $sth = $pdo->prepare($query);
                         $sth->execute([]);
                         while ($row = $sth->fetch()) {
+                            $ar_iduser[] = $row['id_user'];
+                            $ar_diem[] = $row['diem'];
+
+
                             echo "
                                     <tr>
-                                        <td>{$row['mssv']}</td>
+                                        <td>
+                                         <input type='checkbox' data-user-id='{$row['id_user']}'  name='check-sv'>
+                                        
+                                        {$row['mssv']}</td>
                                         <td>{$row['username']}</td>
                                         <td>{$row['lop']}</td>
                                         ";
@@ -89,25 +99,47 @@ session_start();
                                     ";
                             }
                             // khuc duoi
+                            // echo "
+                            //             <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
+                            //                 <td>
+                            //                     <input name=\"diemso\" type=\"text\" class=\"form-control\" value=\"{$row['diem']}\" required placeholder=\"\">
+                            //                 </td>
+                            //                 <td>
+                            //                     <button class=\"btn btn-warning\">Chấm điểm</button>
+                            //                 </td>
+
+                            //             </form>
+                            //         </tr>  
+                            // ";
+
                             echo "
                                         <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
                                             <td>
-                                                <input name=\"diemso\" type=\"text\" class=\"form-control\" value=\"{$row['diem']}\" required placeholder=\"\">
+                                                <input name=\"diemso\" data-user-id='{$row['id_user']}' class='input-diem' type=\"text\" class=\"form-control\" value=\"{$row['diem']}\" required placeholder=\"\">
                                             </td>
                                             <td>
                                                 <button class=\"btn btn-warning\">Chấm điểm</button>
                                             </td>
+
                                         </form>
-                                    </tr>
+                                    </tr>  
                             ";
-
-                            
-
                         }
                         ?>
 
                     </tbody>
                 </table>
+                <div>
+                    <div class="action">
+                        <label for="check-all">Chon Tat ca</label>
+                        <input id='check-all' type='checkbox' name='check-sv-all'>
+
+                    </div>
+                    <div>
+
+                        <button id='diem-all'>Cham diem tat ca</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -121,5 +153,67 @@ session_start();
 </body>
 <!-- {{!-- link js bootstrap  --}} -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    const checkButtons = document.querySelectorAll("input[name='check-sv']");
+    const inputDiem = document.querySelectorAll('.input-diem');
+    const checkButtonAll = document.querySelector("input[name='check-sv-all']");
+    const diemAll = document.querySelector("#diem-all");
+
+    checkButtonAll.onclick = (e) => {
+        let isCheckAll = e.target.checked
+        const checkButtons = document.querySelectorAll("input[name='check-sv']");
+        checkButtons.forEach((input, index) => {
+            input.checked = isCheckAll
+        })
+    }
+
+
+
+    diemAll.onclick = () => {
+        let elementChecked = []
+
+        for (let i = 0; i < checkButtons.length; i++) {
+            if (checkButtons[i].checked) {
+                elementChecked.push((checkButtons[i].getAttribute('data-user-id')))
+            }
+        }
+
+
+
+        let dataLast = []
+
+        inputDiem.forEach((input) => {
+            if (elementChecked.includes(input.getAttribute('data-user-id'))) {
+                dataLast.push({
+                    userId: input.getAttribute('data-user-id'),
+                    diem: input.value
+                })
+            }
+
+        })
+
+
+        POST_data(dataLast)
+
+    }
+
+    function POST_data(data) {
+        $.post({
+            url: "../apps/resoures/view/chamdiem/ChamdiemAll.php",
+            data: {
+                data: data,
+
+            },
+            dataType: 'json',
+            success: function(data, status) {
+                console.log(data);
+                console.log(status)
+                // chuyen huosng php
+                var url = "http://localhost/NLCS/public/chamdiem.php";
+                $(location).attr('href', url);
+            }
+        })
+    }
+</script>
 
 </html>
