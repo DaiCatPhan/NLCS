@@ -63,11 +63,7 @@ include '../apps/config/connect.php';
                                     </th>
                                 </tr>
 
-                                <tr>
-                                    <th scope="row">
-                                        <a href="" class="text-decoration-none">Thống kê</a>
-                                    </th>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>

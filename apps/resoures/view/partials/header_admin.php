@@ -26,7 +26,7 @@
 
     <div class="navbar-nav">
       <a class="nav-link active" aria-current="page" href="http://localhost/NLCS/public/thongke.php">
-        <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 90px;">
+        <button class="btn btn-light rounded-pill " style="height: 50px; min-width: 150px;">
           <span><b>Thống kê</b></span>
         </button>
       </a>

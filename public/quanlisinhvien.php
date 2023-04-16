@@ -52,10 +52,23 @@ session_start();
                                         <a href="main_admin.php" class="text-decoration-none">Trang chủ</a>
                                     </th>
                                 </tr>
+                                
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
+                                    </th>
+                                </tr>
 
                                 <tr>
                                     <th scope="row">
                                         <a href="quanlisinhvien.php" class="text-decoration-none">Quản lí sinh viên</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="thongbao.php" class="text-decoration-none">Thông báo</a>
                                     </th>
                                 </tr>
 
@@ -68,18 +81,6 @@ session_start();
                                 <tr>
                                     <th scope="row">
                                         <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="thongbao.php" class="text-decoration-none">Thông báo</a>
                                     </th>
                                 </tr>
 

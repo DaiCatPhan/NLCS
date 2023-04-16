@@ -81,7 +81,6 @@ session_start();
                                     <tr>
                                         <td>
                                          <input type='checkbox' data-user-id='{$row['id_user']}'  name='check-sv'>
-                                        
                                         {$row['mssv']}</td>
                                         <td>{$row['username']}</td>
                                         <td>{$row['lop']}</td>
@@ -99,18 +98,6 @@ session_start();
                                     ";
                             }
                             // khuc duoi
-                            // echo "
-                            //             <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
-                            //                 <td>
-                            //                     <input name=\"diemso\" type=\"text\" class=\"form-control\" value=\"{$row['diem']}\" required placeholder=\"\">
-                            //                 </td>
-                            //                 <td>
-                            //                     <button class=\"btn btn-warning\">Chấm điểm</button>
-                            //                 </td>
-
-                            //             </form>
-                            //         </tr>  
-                            // ";
 
                             echo "
                                         <form action=\"../apps/resoures/view/chamdiem/Chamdiem.php?id_user={$row['id_user']}\" method=\"POST\">
