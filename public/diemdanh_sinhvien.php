@@ -44,7 +44,7 @@
                     </div>
                     <div class="noidung">
                         <table class="table table-bordered border-success text-center">
-                            <tr class="" style="">
+                            <tr>
                                 <th>STT</th>
                                 <th>Họ và tên </th>
                                 <th>Vắng</th>

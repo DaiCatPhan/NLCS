@@ -38,9 +38,9 @@ session_start();
             </div>
         </div>
 
-        <!-- <a href="http://localhost/NLCS/public/main_admin.php" class="">
+        <a href="http://localhost/NLCS/public/main_admin.php" class="">
             <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 20px; margin-top: 20px;"></i>
-        </a> -->
+        </a>
 
         <!-- Hiển thị Lish Sach  -->
         <div class="row mt-3">
@@ -116,16 +116,14 @@ session_start();
 
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex  m-auto justify-content-between mb-4 " style="width: 80%;">
+                <div class="action d-flex align-items-center">
+                    <label for="check-all"><b>Chọn tất cả</b></label>
+                    <input id='check-all' type='checkbox' name='check-sv-all' style="margin-left: 5px;">
+                </div>
                 <div>
-                    <div class="action">
-                        <label for="check-all">Chon Tat ca</label>
-                        <input id='check-all' type='checkbox' name='check-sv-all'>
-
-                    </div>
-                    <div>
-
-                        <button id='diem-all'>Cham diem tat ca</button>
-                    </div>
+                    <button id='diem-all' class="btn btn-success">Cham diem tat ca</button>
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@ session_start();
 
 
         <?php
-        $query = "SELECT * FROM user , diem WHERE user.id_user = diem.id_user AND  NOT username='admin'";
+        $query = "SELECT * FROM user , diem WHERE user.id_user = diem.id_user AND  NOT username='admin' ORDER BY diem DESC";
         $sth = $pdo->query($query);
         $sth->execute([]);
         while ($row = $sth->fetch()) {
@@ -76,7 +76,7 @@ session_start();
 
         <div class="row">
             <div class="col-8 ">
-                <div class="mt-5" style="width: 90%; height: 500px; margin-left: 10px;">
+                <div class="mt-5" style="width: 97%; height: 500px; margin-left: 10px;">
                     <div class="" style="margin-left: 35px; position: absolute;">
                         <p><b>Điểm trung bình môn : <?php echo (int) $row1['0'] ?> </b></p>
                     </div>
