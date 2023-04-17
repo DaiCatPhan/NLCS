@@ -85,21 +85,35 @@ include '../apps/config/connect.php';
                     <br>
 
                     <?php
-                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ORDER BY created_at DESC ";
+                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ORDER BY created_at ASC ";
                     $sth = $pdo->prepare($query);
                     $sth->execute([]);
                     while ($row = $sth->fetch()) {
-                        echo "
-                                <div class=\" row\">
-                                    <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline\" style=\"width: 83%; height: auto;\">
-                                        <div class=\"d-flex justify-content-between\">
-                                            <span><b>{$row['username']}</b></span> 
-                                            <p>{$row['created_at']}</p>
+                        if($row['username']=='admin'){
+                            echo "
+                                    <div class=\" row\">
+                                        <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline\" style=\"width: 83%; height: auto;\">
+                                            <div class=\"d-flex justify-content-between\">
+                                                <span class='text-danger'><b>{$row['username']}</b></span> 
+                                                <p>{$row['created_at']}</p>
+                                            </div>
+                                            <div class=\"mt-1\"><b>{$row['noidung']}</b></div>
                                         </div>
-                                        <div class=\"mt-1\">{$row['noidung']}</div>
                                     </div>
-                                </div>
-                            ";
+                                ";
+                        }else{
+                            echo "
+                                    <div class=\" row\">
+                                        <div type=\"text\" class=\"form-control mb-2 mx-4 d-inline\" style=\"width: 83%; height: auto;\">
+                                            <div class=\"d-flex justify-content-between\">
+                                                <span>{$row['username']}</span> 
+                                                <p>{$row['created_at']}</p>
+                                            </div>
+                                            <div class=\"mt-1\">{$row['noidung']}</div>
+                                        </div>
+                                    </div>
+                                ";
+                        }
                     }
                     ?>
                 </div>
