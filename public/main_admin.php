@@ -60,6 +60,12 @@ session_start();
 
                                 <tr>
                                     <th scope="row">
+                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
                                         <a href="quanlisinhvien.php" class="text-decoration-none">Quản lí sinh viên</a>
                                     </th>
                                 </tr>
@@ -73,12 +79,6 @@ session_start();
                                 <tr>
                                     <th scope="row">
                                         <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
                                     </th>
                                 </tr>
 
@@ -127,9 +127,15 @@ session_start();
                             <th scope="row">Tên học phần: </th>
                             <td>Niên Luận Cơ Sở - CNTT</td>
                         </tr>
+                        <?php
+                            $query = "SELECT COUNT(id_user) FROM user WHERE NOT username='admin'";
+                            $sth = $pdo -> prepare($query);
+                            $sth->execute([]);
+                            $row = $sth->fetch();
+                        ?>
                         <tr>
                             <th scope="row">Số sinh viên : </th>
-                            <td>10</td>
+                            <td><?php echo $row[0];?></td>
                         </tr>
                     </tbody>
                 </table>
