@@ -85,7 +85,7 @@ include '../apps/config/connect.php';
                     <br>
 
                     <?php
-                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ORDER BY created_at ASC ";
+                    $query = "SELECT  * FROM user , comment WHERE comment.id_user = user.id_user ORDER BY created_at desc ";
                     $sth = $pdo->prepare($query);
                     $sth->execute([]);
                     while ($row = $sth->fetch()) {

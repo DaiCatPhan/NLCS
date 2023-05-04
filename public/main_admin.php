@@ -111,12 +111,16 @@ session_start();
                 <table class=" table table-bordered border-success border-3 m-auto" style="width: 80%;">
                     <thead>
                         <tr class="bg-success text-white">
-                            <th colspan="2" scope="col">Niện Luận</th>
+                            <th colspan="2" scope="col">Niện Luận Cơ Sở CT271 - 12</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Tên trường: </th>
+                            <th scope="row">Trường: </th>
+                            <td>Công Nghệ Thông Tin </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Khoa: </th>
                             <td>Công Nghệ Thông Tin Và Truyền Thông</td>
                         </tr>
                         <tr>

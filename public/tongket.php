@@ -45,7 +45,7 @@ session_start();
                 <a href="http://localhost/NLCS/public/main_admin.php" class="">
                     <i class="fa-solid fa-backward-fast fa-beat fa-xl" style=" position: absolute;left: 30px; margin-top: 10px;"></i>
                 </a>
-                <h1 class="text-center text-primary">Thống kê</h1>
+                <h1 class="text-center text-primary"></h1>
                 <form action="timkiem_sinhvien.php" method="POST" class="text-center">
                     <input type="text" class="form-control w-25 d-inline border border-warning" name="mssv_timkiem">
                     <span class="d-inline">

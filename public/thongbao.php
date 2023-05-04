@@ -50,13 +50,19 @@ session_start();
                         <h3 class="mb-0">Danh mục</h3>
                     </div>
                     <div class="noidung">
-                        <table class="table border">
+                        <table class="table border border-warning">
                             <tbody>
                                 <tr>
                                     <th scope="row">
                                         <a href="main_admin.php" class="text-decoration-none">Trang chủ</a>
                                     </th>
                                 </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
+                                    </th>
+                                </tr>   
 
                                 <tr>
                                     <th scope="row">
@@ -73,12 +79,6 @@ session_start();
                                 <tr>
                                     <th scope="row">
                                         <a href="chamdiem.php" class="text-decoration-none">Chấm điểm</a>
-                                    </th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">
-                                        <a href="Add_sinhvien.php" class="text-decoration-none">Thêm sinh viên</a>
                                     </th>
                                 </tr>
 
@@ -115,7 +115,7 @@ session_start();
                     <div class="noidung row">
                         <!-- them thong bao -->
                         <form action="../apps/resoures/view/thongbao/Add_thongbao.php" method="POST">
-                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline" style="width: 85%; height: 60px;" placeholder="Nhập nội dung thông báo ...">
+                            <input name="noidung" type="text" class="form-control my-2 mx-2 d-inline border border-warning" style="width: 85%; height: 60px;" placeholder="Nhập nội dung thông báo ...">
                             <button class="d-inline btn btn-success">Đăng</button>
                         </form>
                     </div>

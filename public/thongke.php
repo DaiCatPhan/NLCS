@@ -152,12 +152,12 @@ session_start();
             );
         </script>
 
-
+        <!-- Biểu đồ tỉ lệ đậu rớt của lớp học -->
         <script>
             const data1 = {
                 labels: ['Đậu', 'Rớt'],
                 datasets: [{
-                    label: 'My First Dataset',
+                    label: 'Tỉ lệ ',
                     data: [<?php echo $sinhvien_dau ?>, <?php echo $sinhvien_rot ?>],
                     backgroundColor: [
                         'rgb(39, 247, 36,1)',

@@ -1,4 +1,3 @@
-<h1>Upload</h1>
 
 <?php
 include '../../../config/connect.php';

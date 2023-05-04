@@ -159,6 +159,15 @@ include '../apps/config/connect.php';
                                         </p>
                                             ";
                                     
+                                }else{
+                                    echo "
+                                            <p style=\"color: green;
+                                            top: 310px;
+                                            position: absolute;
+                                            right: 17px;\">
+                                        <b>Đã giao</b>
+                                        </p>
+                                            ";
                                 }
                             }
                             ?>
