@@ -123,7 +123,7 @@ session_start();
                     <input id='check-all' type='checkbox' name='check-sv-all' style="margin-left: 5px;">
                 </div>
                 <div>
-                    <button id='diem-all' class="btn btn-success">Cham diem tat ca</button>
+                    <button id='diem-all' class="btn btn-success">Chấm điểm tất cả</button>
                 </div>
             </div>
         </div>
