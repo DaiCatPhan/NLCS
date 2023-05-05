@@ -70,7 +70,6 @@ session_start();
                                 <th scope="col">STT</th>
                                 <th scope="col">Mã số sinh viên</th>
                                 <th scope="col">Họ tên sinh viên</th>
-                                <th scope="col">MSSV</th>
                                 <th scope="col">Lớp</th>
                                 <th scope="col">Mã môn học</th>
                                 <th scope="col">Bài làm</th>
@@ -93,7 +92,6 @@ session_start();
                                             <td>$i</td>
                                             <td>{$row['mssv']}</td>
                                             <td>{$row['username']}</td>
-                                            <td>{$row['mssv']}</td>
                                             <td>{$row['lop']}</td>
                                             <td>CT271</td>
                                     ";

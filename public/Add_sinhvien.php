@@ -97,7 +97,7 @@
                                                     <i class="fa-solid fa-lock  fa-xl me-3 mt-3" style="color: #e70d0d;"></i>
                                                     <div class="form-outline flex-fill ">
                                                         <label class="form-label" for="pass"><b>password</b></label>
-                                                        <input type="" id="pass" class="form-control" name="pass" required />
+                                                        <input type="password" id="pass" class="form-control" name="pass" required />
                                                     </div>
                                                 </div>
 

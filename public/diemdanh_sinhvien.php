@@ -43,8 +43,8 @@
                         <h3 class="text-center">Thống kê vắng</h3>
                     </div>
                     <div class="noidung">
-                        <table class="table table-bordered border-success text-center">
-                            <tr>
+                        <table class="table table-bordered border-success text-center bg-light">
+                            <tr class="bg-warning">
                                 <th>STT</th>
                                 <th>Họ và tên </th>
                                 <th>Vắng</th>
@@ -83,9 +83,9 @@
                     <div class="box " style="width: 98%;">
 
                         <div class="noidung">
-                            <table class="table table-bordered border-warning ">
+                            <table class="table table-bordered border-warning bg-light">
                                 <tbody>
-                                    <tr>
+                                    <tr >
                                         <td colspan="2">
                                             <h3 class="mb-0 text-center">Thêm mới thông tin điểm danh</h3>
                                         </td>
